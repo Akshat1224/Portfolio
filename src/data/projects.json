@@ -1,18 +1,23 @@
 [
   {
+    "title": "E-commerce Website",
+    "imageSrc": "projects/project3.png",
+    "description": "Developed a responsive e-commerce platform using React, Tailwind CSS, Node.js, and Express, improving user engagement by 20% and ensuring seamless experiences across devices. Integrated a secure payment gateway and optimized the checkout process, reducing cart abandonment rates by 15%.",
+    "skills": ["React", "Tailwind CSS", "Node.js", "Express"],
+    "source": "https://github.com/Akshat1224/React_project_ecommerce"
+  },
+  {
     "title": "Restaurant Website",
     "imageSrc": "projects/project1.png",
     "description": "This is a project made for making the food ordering from restaurant easier",
-    "skills": ["Javascript","EJS", "Express", "Node","Saas"],
-    
-    "source": "https://github.com/Akshat1224/Foodies"
+    "skills": ["Javascript", "EJS", "Express", "Node", "Saas"],
+    "source": "https://github.com/Akshat1224/Foodies-main"
   },
   {
     "title": "Weather App",
     "imageSrc": "projects/project2.png",
     "description": "This is a project made to fetch data of any city using API",
-    "skills": ["HTML","CSS","Javascript", "Express", "Node"],
-    
+    "skills": ["HTML", "CSS", "Javascript", "Express", "Node"],
     "source": "https://github.com/Akshat1224/Weather_app"
   }
 ]
