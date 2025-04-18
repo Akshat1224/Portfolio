@@ -1,7 +1,7 @@
 [
   {
     "title": "E-commerce Website",
-    "imageSrc": "projects/project3.png",
+    "imageSrc": "projects/project1.png",
     "description": [
       "Developed a responsive e-commerce platform using React, Tailwind CSS, Node.js, and Express.",
       "Improved user engagement by 20% with optimized UI and seamless mobile experience.",
@@ -9,11 +9,11 @@
       "Reduced cart abandonment rate by 15%."
     ],
     "skills": ["React", "Tailwind CSS", "Node.js", "Express"],
-    "source": "https://github.com/Akshat1224/E-commerce"
+    "source": "https://github.com/Akshat1224/React_project_ecommerce"
   },
   {
     "title": "Restaurant Website",
-    "imageSrc": "projects/project1.png",
+    "imageSrc": "projects/project2.png",
     "description": [
       "Built a restaurant ordering web app with JavaScript, EJS, Node.js, and Express.",
       "Designed an interactive menu and user-friendly interface with SCSS.",
@@ -21,11 +21,11 @@
       "Improved customer engagement for local food businesses."
     ],
     "skills": ["JavaScript", "EJS", "Express", "Node", "SCSS"],
-    "source": "https://github.com/Akshat1224/Foodies"
+    "source": "https://github.com/Akshat1224/Foodies-main"
   },
   {
     "title": "Weather App",
-    "imageSrc": "projects/project2.png",
+    "imageSrc": "projects/project3.png",
     "description": [
       "Created a weather forecasting app using Node.js and Express.",
       "Fetched real-time weather data using a public API for any searched city.",
