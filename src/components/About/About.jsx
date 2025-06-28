@@ -237,6 +237,58 @@ export function About() {
             width: 100% !important;
           }
         }
+        /* Extra mobile tweaks for About section */
+        @media (max-width: 600px) {
+          .${styles.about3d} {
+            width: 100vw !important;
+            min-width: 0 !important;
+            height: 180px !important;
+            max-height: 180px !important;
+            margin-bottom: 1rem !important;
+            overflow: visible !important;
+          }
+          .${styles.content} {
+            padding: 0 0.2rem !important;
+            gap: 12px !important;
+          }
+          .${styles.header} {
+            text-align: center !important;
+            padding: 0.5rem 0 !important;
+          }
+          .${styles.profileSection} {
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            margin-bottom: 10px !important;
+          }
+          .${styles.imageWrapper} {
+            width: 80px !important;
+            height: 80px !important;
+            margin: 0 auto 0.5rem auto !important;
+          }
+          .${styles.personalInfo} {
+            width: 100% !important;
+            padding: 0 !important;
+            font-size: 0.95rem !important;
+          }
+          .${styles.infoGrid} {
+            grid-template-columns: 1fr !important;
+            gap: 0.3rem !important;
+          }
+          .${styles.skillsContainer} {
+            width: 100% !important;
+            margin-bottom: 10px !important;
+          }
+          .${styles.skillCard} {
+            min-width: 0 !important;
+            width: 100% !important;
+            margin: 0.3rem 0 !important;
+          }
+          .${styles.quoteSection} {
+            padding: 0.5rem 0.2rem !important;
+            font-size: 0.95rem !important;
+          }
+        }
         /* Contact section extra mobile tweaks */
         @media (max-width: 480px) {
           .contact-title {
