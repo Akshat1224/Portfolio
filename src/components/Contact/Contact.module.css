@@ -337,16 +337,35 @@
 }
 
 @media (max-width: 480px) {
-  .contact-title {
-    font-size: 2rem;
+  .contact-container {
+    padding: 1rem 0.2rem !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-
-  .contact-subtitle {
-    font-size: 1rem;
+  .contact-content {
+    justify-items: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.2rem !important;
   }
-
   .form-wrapper {
-    padding: 1rem;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 98vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .contact-info {
+    width: 100% !important;
+    margin: 0 auto 1rem auto !important;
+    text-align: center !important;
+  }
+  .contact-links {
+    align-items: center !important;
+    width: 100% !important;
   }
 }
 

@@ -65,6 +65,11 @@ export const Contact = () => {
       background: "linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #0f0f23 100%)", // Match other sections
       margin: "0 5%",
       overflow: "hidden",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      minHeight: "100vh"
     }}>
       {/* 3D Background */}
       <div className={styles["canvas-wrapper"]}>
