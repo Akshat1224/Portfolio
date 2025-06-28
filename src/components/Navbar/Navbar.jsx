@@ -6,7 +6,7 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.navbar} style={{ marginBottom: "32px" }}>
       <a className={styles.title} href="/">
         Portfolio
       </a>
@@ -32,7 +32,7 @@ export const Navbar = () => {
             <a href="#projects">Projects</a>
           </li>
           <li>
-            <a href="#skills">Skills</a> {/* Added Skills link */}
+            <a href="#skills">Skills</a>
           </li>
           <li>
             <a href="#contact">Contact</a>

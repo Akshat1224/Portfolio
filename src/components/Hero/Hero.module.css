@@ -1,111 +1,301 @@
-@import "../../vars.css";
-
 .container {
   position: relative;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 49px;
-  z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  overflow: hidden;
+}
+
+.backgroundElements {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.floatingDot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #60a5fa;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .content {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  max-width: 48rem;
+}
+
+.textContent {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  color: var(--color-text);
-  z-index: 1;
+  gap: 2rem;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .title {
-  font-size: 72px;
+  font-size: 5rem;
   font-weight: 900;
-  margin-bottom: 33px;
-  font-family: var(--font-roboto);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 70%,
-    rgba(255, 255, 255, 0) 120%
-  );
-  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.titleLine1 {
+  display: block;
+  background: linear-gradient(to right, #ffffff, #bfdbfe, #c4b5fd);
+  background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientX 3s ease infinite;
+}
+
+.titleLine2 {
+  display: block;
+  background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientX 3s ease infinite;
+  animation-delay: 0.3s;
+}
+
+.titleLine3 {
+  display: block;
+  background: linear-gradient(to right, #a855f7, #ec4899, #ef4444);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientX 3s ease infinite;
+  animation-delay: 0.6s;
+}
+
+.descriptionContainer {
+  position: relative;
 }
 
 .description {
-  font-size: 30px;
-  font-family: var(--font-roboto);
-  margin-bottom: 52px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #d1d5db;
+  max-width: 32rem;
+  animation: fadeInUp 0.8s ease-out both;
+  animation-delay: 0.9s;
+}
+
+.highlight1 {
+  color: #60a5fa;
+  font-weight: 600;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.highlight2 {
+  color: #a855f7;
+  font-weight: 600;
+}
+
+.highlight3 {
+  color: #34d399;
+  font-weight: 600;
+}
+
+.floatingCode1 {
+  position: absolute;
+  right: -2.5rem;
+  top: 0;
+  opacity: 0.2;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floatingCode2 {
+  position: absolute;
+  left: -1.25rem;
+  bottom: 0;
+  opacity: 0.2;
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.floatingCode1 code,
+.floatingCode2 code {
+  font-size: 0.875rem;
+  color: #60a5fa;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out both;
+  animation-delay: 1.2s;
 }
 
 .contactBtn {
-  text-decoration: none;
-  background-color: var(--color-primary);
-  color: var(--color-text);
-  border-radius: 100px;
-  font-size: 30px;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  border-radius: 9999px;
   font-weight: 600;
-  padding: 17px 26px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  font-size: 1.125rem;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.heroImg {
+.contactBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.btnText {
+  position: relative;
+  z-index: 10;
+}
+
+.btnOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #7c3aed, #ec4899);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contactBtn:hover .btnOverlay {
+  opacity: 1;
+}
+
+.projectsBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border: 2px solid #60a5fa;
+  color: #60a5fa;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projectsBtn:hover {
+  background-color: #60a5fa;
+  color: white;
+  transform: scale(1.05);
+}
+
+.btnContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.projectsBtn:hover .btnIcon {
+  transform: translateX(0.25rem);
+}
+
+.hero3dContainer {
+  display: none;
+}
+
+.hero3d {
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 50%;
-  z-index: 1;
-
-  animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  height: 100%;
 }
 
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
+@keyframes gradientX {
+  0%,
+  100% {
+    background-size: 200% 200%;
+    background-position: left center;
   }
   50% {
-    transform: translate(0, 10px);
+    background-size: 200% 200%;
+    background-position: right center;
   }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
   100% {
-    transform: translate(0, -0px);
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
-.topBlur {
-  position: absolute;
-  width: 50vw;
-  height: 50vw;
-  min-width: 350px;
-  min-width: 350px;
-  top: -128px;
-  left: -10vw;
-  border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
-  filter: blur(100px);
-  z-index: 0;
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
-.bottomBlur {
-  position: absolute;
-  width: 70vw;
-  height: 50vw;
-  min-width: 350px;
-  min-width: 250px;
-  top: 246px;
-  right: -25vw;
-  border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
-  filter: blur(100px);
-  z-index: 0;
+@media screen and (min-width: 1024px) {
+  .hero3dContainer {
+    display: block;
+    position: relative;
+    flex: 1;
+  }
+
+  .buttonContainer {
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 6rem;
+  }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 768px) {
   .container {
     flex-direction: column-reverse;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
-  .content {
-    align-items: center;
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+
+  .contactBtn,
+  .projectsBtn {
+    font-size: 1rem;
+    padding: 0.875rem 1.75rem;
   }
 }
