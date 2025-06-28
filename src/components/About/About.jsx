@@ -6,6 +6,7 @@ import { Float } from "@react-three/drei"
 import { getImageUrl } from "../../utils"
 import styles from "./About.module.css"
 
+// ✅ Fixed typo: "RotatingC andube" ➝ "RotatingCube"
 function RotatingCube({ position, color }) {
   const meshRef = useRef()
 
@@ -47,17 +48,12 @@ export function About() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
+        if (entry.isIntersecting) setIsVisible(true)
       },
-      { threshold: 0.3 },
+      { threshold: 0.3 }
     )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
 
@@ -101,17 +97,23 @@ export function About() {
   ]
 
   return (
-    <section ref={sectionRef} className={styles.container} id="about" style={{
-      borderRadius: "2.5rem", // Add large border radius
-      border: "none", // No border
-      background: "linear-gradient(135deg, #2d2d5a 0%, #44447a 50%, #2d2d5a 100%)", // Even lighter gradient
-      margin: "0 5% 40px 5%", // Only bottom margin for vertical gap
-      overflow: "visible", // Allow content to overflow if needed
-    }}>
+    <section
+      ref={sectionRef}
+      className={styles.container}
+      id="about"
+      style={{
+        borderRadius: "2.5rem",
+        border: "none",
+        background: "linear-gradient(135deg, #2d2d5a 0%, #44447a 50%, #2d2d5a 100%)",
+        margin: "0 5% 40px 5%",
+        overflow: "visible",
+      }}
+    >
       <About3D />
 
-      <div className={styles.content} style={{ gap: "40px" }}>
-        <div className={`${styles.header} ${isVisible ? styles.visible : ""}`} style={{ marginBottom: "32px" }}>
+      <div className={styles.content}>
+        {/* Header Section */}
+        <div className={`${styles.header} ${isVisible ? styles.visible : ""}`}>
           <h2 className={styles.title}>About Me</h2>
           <p className={styles.headerDescription}>
             A passionate Computer Science student dedicated to creating innovative web solutions
@@ -119,9 +121,10 @@ export function About() {
           <div className={styles.titleUnderline} />
         </div>
 
-        <div className={styles.mainContent} style={{ gap: "40px" }}>
+        {/* Main Content */}
+        <div className={styles.mainContent}>
           {/* Profile Section */}
-          <div className={`${styles.profileSection} ${isVisible ? styles.visible : ""}`} style={{ marginBottom: "32px" }}>
+          <div className={`${styles.profileSection} ${isVisible ? styles.visible : ""}`}>
             <div className={styles.imageWrapper}>
               <div className={styles.imageGlow} />
               <div className={styles.imageCard}>
@@ -136,7 +139,6 @@ export function About() {
               </div>
             </div>
 
-            {/* Personal Info */}
             <div className={styles.personalInfo}>
               <h3 className={styles.infoTitle}>Personal Information</h3>
               <div className={styles.infoGrid}>
@@ -150,26 +152,22 @@ export function About() {
             </div>
           </div>
 
-          {/* Skills Cards */}
-          <div className={styles.skillsContainer} style={{ marginBottom: "32px" }}>
+          {/* Skills Section */}
+          <div className={styles.skillsContainer}>
             <h3 className={styles.skillsTitle}>What I Do</h3>
             {skills.map((skill, index) => (
               <div
                 key={index}
                 className={`${styles.skillCard} ${styles[skill.color]} ${isVisible ? styles.visible : ""}`}
-                style={{ transitionDelay: skill.delay, marginBottom: "24px" }}
+                style={{ transitionDelay: skill.delay }}
               >
                 <div className={styles.skillCardInner}>
                   <div className={styles.skillCardOverlay} />
-
                   <div className={styles.skillContent}>
                     <div className={styles.skillIcon}>{skill.icon}</div>
-
                     <div className={styles.skillText}>
                       <h4 className={styles.skillTitle}>{skill.title}</h4>
                       <p className={styles.skillDescription}>{skill.description}</p>
-
-                      {/* Technologies */}
                       <div className={styles.technologies}>
                         {skill.technologies.map((tech, techIndex) => (
                           <span key={techIndex} className={styles.tech}>
@@ -179,8 +177,6 @@ export function About() {
                       </div>
                     </div>
                   </div>
-
-                  <div className={styles.skillBorder} />
                 </div>
               </div>
             ))}
@@ -188,7 +184,7 @@ export function About() {
         </div>
 
         {/* Quote Section */}
-        <div className={`${styles.quoteSection} ${isVisible ? styles.visible : ""}`} style={{ marginTop: "32px" }}>
+        <div className={`${styles.quoteSection} ${isVisible ? styles.visible : ""}`}>
           <blockquote className={styles.quote}>
             "I'm always eager to learn more and collaborate on exciting projects. Feel free to reach out if you'd like
             to connect!"
@@ -196,6 +192,70 @@ export function About() {
           <div className={styles.quoteAuthor}>- Akshat Kushwaha</div>
         </div>
       </div>
+    
+
+
+      <style>{`
+        @media (max-width: 900px) {
+          .${styles.content} {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 24px !important;
+            padding: 0 0.5rem !important;
+            width: 100% !important;
+          }
+          .${styles.mainContent} {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 24px !important;
+            width: 100% !important;
+          }
+          .${styles.profileSection} {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin-bottom: 20px !important;
+            width: 100% !important;
+          }
+          .${styles.imageWrapper} {
+            width: 120px !important;
+            height: 120px !important;
+            margin: 0 auto 1rem auto !important;
+          }
+          .${styles.profileImage} {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 50% !important;
+          }
+          .${styles.personalInfo} {
+            width: 100% !important;
+            padding: 0 !important;
+          }
+          .${styles.skillsContainer} {
+            margin-bottom: 20px !important;
+            width: 100% !important;
+          }
+        }
+        /* Contact section extra mobile tweaks */
+        @media (max-width: 480px) {
+          .contact-title {
+            font-size: 1.5rem !important;
+          }
+          .contact-subtitle {
+            font-size: 0.95rem !important;
+          }
+          .form-wrapper {
+            padding: 0.5rem !important;
+          }
+          .contact-item {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 0.5rem !important;
+            padding: 0.7rem !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

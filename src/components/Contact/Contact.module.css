@@ -349,3 +349,72 @@
     padding: 1rem;
   }
 }
+
+/* Base layout adjustments */
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-info,
+.form-wrapper {
+  flex: 1 1 45%;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 1rem;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info,
+  .form-wrapper {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-subtitle {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .form-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .form-button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .canvas-wrapper {
+    display: none; /* Hide 3D background if performance is an issue on mobile */
+  }
+}
+
